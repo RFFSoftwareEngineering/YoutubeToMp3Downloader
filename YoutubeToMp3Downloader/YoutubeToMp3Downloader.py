@@ -1,10 +1,15 @@
 from pytube import Playlist, YouTube
 from tqdm import tqdm
 import os
+import time
+
 
 # for playlists:
-playlist = Playlist('https://www.youtube.com/watch?v=YNB6aIwC8mg&list=PLrxByE8f6bAkMOm721jL91JxPPwDDmrsz&index=1')
+playlist = Playlist('https://www.youtube.com/watch?v=ZY1vye3puYw&list=PLrxByE8f6bAkjXc5RwhjNUXnfHbcln0a7')
 print('Number Of Videos In playlist: %s' % len(playlist.video_urls))
+
+
+x = 0.0
 
 
 for video in tqdm(playlist.videos):
@@ -15,6 +20,12 @@ for video in tqdm(playlist.videos):
         base, ext = os.path.splitext(out_file)
         new_file = base + ".mp3"
         os.rename(out_file, new_file)
+        time.sleep(x)
+        if x == 30:
+            x = 30 - 25
+        else:
+            x += 0.015
+        print(video)
     except:
         pass
 
