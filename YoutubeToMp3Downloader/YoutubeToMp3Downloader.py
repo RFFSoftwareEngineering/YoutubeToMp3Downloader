@@ -5,14 +5,14 @@ import time
 
 
 # for playlists:
-playlist = Playlist('https://www.youtube.com/watch?v=ZY1vye3puYw&list=PLrxByE8f6bAkjXc5RwhjNUXnfHbcln0a7')
-print('Number Of Videos In playlist: %s' % len(playlist.video_urls))
+playlist = Playlist('https://www.youtube.com/watch?v=-P6yJjuDbas&list=PLrxByE8f6bAkMOm721jL91JxPPwDDmrsz&index=1')
+print('Number Of Videos In playlist: %s' % len(playlist.video_urls[:9]))
 
 
 x = 0.0
 
 
-for video in tqdm(playlist.videos):
+for video in tqdm(playlist.videos[:9]):
     try:
         video = video.streams.filter(only_audio=True).first()
         out_file = video.download()
