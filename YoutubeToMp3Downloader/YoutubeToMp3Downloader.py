@@ -9,7 +9,7 @@ import youtube_dl
 # for playlists:
 
 playlist = Playlist('https://www.youtube.com/playlist?list=PLrxByE8f6bAkMOm721jL91JxPPwDDmrsz')
-print('Number Of Videos In playlist: %s' % len(playlist.video_urls[:14]))
+print('Number Of Videos In playlist: %s' % len(playlist.video_urls[:12]))
 
 lista = []
 f = open('url.txt', 'w+')
